@@ -5,7 +5,6 @@ export default async function seed() {
 	
 	await db.insert(GamesDB).values([
 		{
-			id: 1,
 			title: "Scarlet Nexus",
 			released: "24/06/2021",
 			companie: "Bandai Namco Studios",
@@ -19,7 +18,6 @@ export default async function seed() {
 			platform: "Xbox Series X",
 		},
 		{
-			id: 2,
 			title: "Eiyuden Chronicle: Rising",
 			released: "10/05/2022",
 			companie: "Rabbit & Bear Studios",
@@ -33,7 +31,6 @@ export default async function seed() {
 			platform: "Xbox Series X",
 		},
 		{
-			id: 3,
 			title: "League of Legends",
 			released: "27/10/2009",
 			companie: "Riot Games",
@@ -47,7 +44,6 @@ export default async function seed() {
 			platform: "PC Game",
 		},
 		{
-			id: 4,
 			title: "Euro Truck Simulator 2",
 			released: "18/10/2012",
 			companie: "SCS Software",
@@ -61,7 +57,6 @@ export default async function seed() {
 			platform: "Steam",
 		},
 		{
-			id: 5,
 			title: "F1 23",
 			released: "16/06/2023",
 			companie: "Codemasters",
@@ -75,7 +70,6 @@ export default async function seed() {
 			platform: "EA Play",
 		},
 		{
-			id: 6,
 			title: "Lost Ark",
 			released: "04/12/2018",
 			companie: "Tripod Studio",
@@ -89,7 +83,6 @@ export default async function seed() {
 			platform: "Steam",
 		},
 		{
-			id: 7,
 			title: "Call of Duty: Warzone 2.0",
 			released: "16/11/2022",
 			companie: "Infinity Ward",
@@ -103,7 +96,6 @@ export default async function seed() {
 			platform: "Steam",
 		},
 		{
-			id: 8,
 			title: "Palworld",
 			released: "19/01/2024",
 			companie: "PocketPair",
@@ -117,7 +109,6 @@ export default async function seed() {
 			platform: "Steam",
 		},
 		{
-			id: 9,
 			title: "Enshrouded",
 			released: "24/01/2024",
 			companie: "Keen Games",
@@ -131,7 +122,6 @@ export default async function seed() {
 			platform: "Steam",
 		},
 		{
-			id: 10,
 			title: "Call of Duty® (2003)",
 			released: "29/10/2003",
 			companie: "Infinity Ward",
@@ -145,7 +135,6 @@ export default async function seed() {
 			platform: "Steam",
 		},
 		{
-			id: 11,
 			title: "Call of Duty® 2",
 			released: "25/10/2005",
 			companie: "Infinity Ward",
@@ -159,7 +148,6 @@ export default async function seed() {
 			platform: "Steam",
 		},
 		{
-			id: 12,
 			title: "Call of Duty® 4: Modern Warfare® (2007)",
 			released: "05/11/2007",
 			companie: "Treyarch",
@@ -173,7 +161,6 @@ export default async function seed() {
 			platform: "Steam",
 		},
 		{
-			id: 13,
 			title: "Guitar Hero III: Legends of Rock",
 			released: "28/10/2007",
 			companie: "Vicarious Visions",
@@ -187,7 +174,6 @@ export default async function seed() {
 			platform: "PC Game",
 		},
 		{
-			id: 14,
 			title: "Batman: Return to Arkham - Arkham Asylum",
 			released: "17/10/2016",
 			companie: "Rocksteady Studios",
@@ -201,7 +187,6 @@ export default async function seed() {
 			platform: "Xbox Series X",
 		},
 		{
-			id: 15,
 			title: "Final Fantasy VIII",
 			released: "05/12/2013",
 			companie: "Square",
@@ -215,7 +200,6 @@ export default async function seed() {
 			platform: "Steam",
 		},
 		{
-			id: 16,
 			title: "Final Fantasy XIII",
 			released: "17/12/2009",
 			companie: "Square Enix",
@@ -229,7 +213,6 @@ export default async function seed() {
 			platform: "Xbox Series X",
 		},
 		{
-			id: 17,
 			title: "Portal",
 			released: "10/10/2007",
 			companie: "Valve",
@@ -243,7 +226,6 @@ export default async function seed() {
 			platform: "Xbox Series X",
 		},
 		{
-			id: 18,
 			title: "AO Tennis 2",
 			released: "08/01/2020",
 			companie: "Big Ant Studios",
@@ -257,7 +239,6 @@ export default async function seed() {
 			platform: "Steam",
 		},
 		{
-			id: 19,
 			title: "Call of Duty: World at War",
 			released: "10/11/2008",
 			companie: "Treyarch",
@@ -271,7 +252,6 @@ export default async function seed() {
 			platform: "Steam",
 		},
 		{
-			id: 20,
 			title: "Crash Bandicoot N. Sane Trilogy | C1",
 			released: "29/06/2017",
 			companie: "Vicarious Visions",
@@ -285,7 +265,6 @@ export default async function seed() {
 			platform: "Steam",
 		},
 		{
-			id: 21,
 			title: "Granblue Fantasy: Relink",
 			released: "31/01/2024",
 			companie: "Cygames Osaka",
@@ -299,7 +278,6 @@ export default async function seed() {
 			platform: "Steam",
 		},
 		{
-			id: 22,
 			title: "Senua's Saga: Hellblade II",
 			released: "20/05/2024",
 			companie: "Ninja Theory",

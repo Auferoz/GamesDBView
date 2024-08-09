@@ -7,21 +7,25 @@ export const GET: APIRoute = async ({ params }) => {
 
     const gameId = params.gameId ?? '';
 
-    const body = {
-        method: 'GET',
-        gameId: gameId,
-    };
+    const games = await db.select().from(GamesDB).where(eq(GamesDB.id, +gameId));
 
-    const games = await db.select().from(GamesDB);
+    if ( games.length === 0 ) {
 
-    return new Response(
-        JSON.stringify(body),
-        {
-            status: 200,
+        return new Response(JSON.stringify({ msg: 'No id found' }), {
+            status: 404,
             headers: {
                 'Content-Type': 'application/json',
             },
         });
+
+    }
+
+    return new Response(JSON.stringify(games.at(0)), {
+        status: 200,
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
 }
 
 export const PATCH: APIRoute = async ({ params, request }) => {
