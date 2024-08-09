@@ -1,0 +1,33 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+---
+
+<Layout title="Game Individual">
+	<section class="flex flex-row gap-4">
+
+		<article class="w-3/12" onclick="history.back()">
+            <img
+            transition:name={`-image`}
+            src="https://images.igdb.com/igdb/image/upload/t_1080p/co7ptq.webp" 
+            alt="Title" 
+            class="rounded-lg border w-full">
+		</article>
+
+        <aside class="w-9/12">
+            <p class="text-4xl font-light">
+                Granblue Fantasy: Relink
+            </p>
+            <p class="text-xl mb-2 font-semibold italic">31/1/2024</p>
+            <p class="text-xl mb-2"><span class="font-semibold">Genre:</span> Role-playing (RPG), Hack and slash/Beat 'em up, Adventure</p>
+            <p class="text-xl mb-2"><span class="font-semibold">Platforms:</span> PC (Microsoft Windows), PlayStation 4, PlayStation 5</p>
+            <p class="text-xl mb-2"><span class="font-semibold">Editions:</span> See 4 more editions of this game</p>
+            <p class="text-xl mb-2">
+                A grand adventure in the skies awaits! Form a party of four from a diverse roster of skyfarers 
+                and slash—or shoot or hex—your way to victory against treacherous foes in this action RPG. Take 
+                on quests solo or with the help of others in up to 4-player co-op play!
+            </p>
+        </aside>
+
+	</section>
+</Layout>

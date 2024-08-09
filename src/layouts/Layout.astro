@@ -1,4 +1,7 @@
 ---
+import { ViewTransitions } from "astro:transitions";
+import NavBar from '../components/NavBar.astro';
+
 interface Props {
 	title: string;
 }
@@ -7,7 +10,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -15,36 +18,75 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<ViewTransitions />
 	</head>
 	<body>
-		<slot />
+		<NavBar />
+		<main class="mt-10 mx-auto flex-grow w-full max-w-[1360px] px-4">
+			<slot />
+		</main>
 	</body>
 </html>
 <style is:global>
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+		color-scheme: light dark;
 	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
+
+	* {
+		margin: 0;
+		padding: 0;
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+
+	body {
+		min-height: 100dvh;
+	}
+	input,
+	button,
+	textarea,
+	select {
+		font: inherit;
+	}
+
+	p {
+		text-wrap: pretty;
+	}
+	hl,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		text-wrap: balance;
+	}
+
+	img,
+	video,
+	svg {
+		height: auto;
+		max-width: 100%;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		*,
+		*::before,
+		*::after {
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.01ms !important;
+			scroll-behavior: auto !important;
+			transition: none;
+		}
+	}
+
+	.font-nunito {
+		font-family: "Nunito Variable", sans-serif;
+	}
+	.font-roboto {
+		font-family: "Roboto", sans-serif;
 	}
 </style>

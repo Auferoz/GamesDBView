@@ -1,0 +1,26 @@
+---
+// import type { GetStaticPaths } from 'astro';
+import Layout from '../../../layouts/Layout.astro';
+
+// export const getStaticPaths = (async ({ paginate }) => {
+
+// const resp = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151");
+// const { results } = (await resp.json()) as PokemonListResponse;
+
+// return paginate(results, { pageSize: 20 });
+// }) satisfies GetStaticPaths;
+---
+
+<Layout title="Paginado">
+	<section class="grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7">
+		<article>
+			<a href="/Games/2024/name">
+				<img 
+				transition:name={`-image`}
+				src="https://images.igdb.com/igdb/image/upload/t_cover_big/co7ptq.webp" 
+				alt="Title" 
+				class="rounded-lg border hover:scale-105 transition-all">
+			</a>
+		</article>
+	</section>
+</Layout>
