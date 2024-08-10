@@ -1,0 +1,19 @@
+---
+interface Props {
+	title: string,
+	poster: string,
+	}
+
+const { title, poster } = Astro.props;
+
+const imageSrc = `https://images.igdb.com/igdb/image/upload/t_cover_big/${poster}.webp`;
+---
+<article>
+	<a href=`/Games/2024/${title}`>
+		<img 
+		transition:name={`${title}-image`}
+		src={imageSrc} 
+		alt={title}
+		class="rounded-lg border hover:scale-105 transition-all">
+	</a>
+</article>

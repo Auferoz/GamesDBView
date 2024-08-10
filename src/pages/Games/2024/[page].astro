@@ -1,0 +1,44 @@
+---
+import type { GetStaticPaths } from 'astro';
+import type { GamesDB, GamesDBArray } from "@intefaces/burstdb";
+import CardGame from '@components/CardGame.astro';
+import Layout from '@layouts/Layout.astro';
+
+export const getStaticPaths = (async ({ paginate }) => {
+
+const resp = await fetch("https://fe51f31c.gamesdbview.pages.dev/api/games");
+const results: GamesDBArray = await resp.json();
+
+return paginate(results, { pageSize: 20 });
+}) satisfies GetStaticPaths;
+
+const title = "List View Games | 2024";
+const { page } = Astro.props;
+---
+
+<Layout title={title}>
+	<section class="grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7">
+		{
+			page.data.map(({ title, poster,}) => <CardGame title={title} poster={poster}/>)
+		}
+	</section>
+	<section class="flex mt-10 gap-2 items-center">
+		<a class:list={["btn", { disabled: !page.url.prev }]} href={page.url.prev}>Anterior</a>
+	
+		<a class:list={["btn", { disabled: !page.url.next }]} href={page.url.next}>Siguiente</a>
+	
+		<div class="flex flex-1"></div>
+	
+		<span class="text-lg font-bold">Página: {page.currentPage}</span>
+	</section>
+</Layout>
+
+<style>
+	.btn {
+		@apply bg-blue-500 p-2 text-white rounded-md;
+	}
+
+	.disabled {
+		@apply bg-gray-600 text-gray-400;
+	}
+</style>

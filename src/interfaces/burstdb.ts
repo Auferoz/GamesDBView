@@ -26,3 +26,5 @@ export enum State {
     Jugando = "jugando",
     Pausado = "pausado",
 }
+
+export type GamesDBArray = GamesDB[];
