@@ -8,8 +8,9 @@ export const getStaticPaths = (async ({ paginate }) => {
 
 const resp = await fetch("https://fe51f31c.gamesdbview.pages.dev/api/games");
 const results: GamesDBArray = await resp.json();
+// const { GamesDB } = (await resp.json()) as GamesDBArray;
 
-return paginate(results, { pageSize: 20 });
+return paginate(results, { pageSize: 10 });
 }) satisfies GetStaticPaths;
 
 const title = "List View Games | 2024";
@@ -17,9 +18,9 @@ const { page } = Astro.props;
 ---
 
 <Layout title={title}>
-	<section class="grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7">
+	<section class="grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 2xl:h-[724px]">
 		{
-			page.data.map(({ title, poster,}) => <CardGame title={title} poster={poster}/>)
+			page.data.map(({ title, poster }) => <CardGame title={title} poster={poster}/>)
 		}
 	</section>
 	<section class="flex mt-10 gap-2 items-center">

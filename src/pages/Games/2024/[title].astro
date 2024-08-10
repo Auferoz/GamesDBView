@@ -8,6 +8,10 @@ import CardGame from '@components/CardGame.astro';
 export const getStaticPaths = (async () => {
 const resp = await fetch("https://fe51f31c.gamesdbview.pages.dev/api/games");
 const results: GamesDBArray = await resp.json();
+// const { GamesDB } = (await resp.json()) as GamesDBArray;
+
+
+
 
 return results.map(({ title, poster }) => ({
     params: { title: title },
@@ -15,7 +19,6 @@ return results.map(({ title, poster }) => ({
 }));
 
 }) satisfies GetStaticPaths;
-
 
 const { title } = Astro.params;
 const { poster } = Astro.props;
@@ -29,11 +32,14 @@ const imageSrc = `https://images.igdb.com/igdb/image/upload/t_cover_big/${poster
         <CardGame title={title} poster={poster}/>
 
         <aside class="w-9/12">
-            <p class="text-4xl font-light">
+            <!-- <button onclick="window.history.back()" class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Atras</button> -->
+            <p class="text-2xl xl:text-4xl font-light">
                 {title}
             </p>
-            <!-- <p class="text-xl mb-2 font-semibold italic">31/1/2024</p>
-            <p class="text-xl mb-2"><span class="font-semibold">Genre:</span> Role-playing (RPG), Hack and slash/Beat 'em up, Adventure</p>
+            <p class="text-xl mb-2 font-semibold italic">
+
+            </p>
+            <!--<p class="text-xl mb-2"><span class="font-semibold">Genre:</span> Role-playing (RPG), Hack and slash/Beat 'em up, Adventure</p>
             <p class="text-xl mb-2"><span class="font-semibold">Platforms:</span> PC (Microsoft Windows), PlayStation 4, PlayStation 5</p>
             <p class="text-xl mb-2"><span class="font-semibold">Editions:</span> See 4 more editions of this game</p>
             <p class="text-xl mb-2">
