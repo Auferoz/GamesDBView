@@ -1,0 +1,64 @@
+---
+import Layout from "@layouts/Layout.astro";
+import CardGame from "@components/CardGame.astro";
+import { getGamebyId } from '../../../../services/services'
+
+export const prerender = false
+
+const { id } = Astro.params
+
+let game: any
+
+if (id) {
+    game = await getGamebyId({ id })
+}
+
+const imageSrc = `https://images.igdb.com/igdb/image/upload/t_1080p/${game.poster}.webp`;
+
+---
+
+<Layout title="Game | Game">
+    <section class="flex flex-row gap-4">
+        <article class="w-4/12">
+            <a onclick="history.back()">
+                <img 
+                transition:name={`${game.title}-image`}
+                src={imageSrc} 
+                alt={game.title}
+                class="w-full rounded-lg border">
+            </a>
+        </article>
+        <aside class="w-9/12">
+            <p class="text-2xl xl:text-4xl font-light">
+                {game.title}
+            </p>
+            <p class="text-xl mb-2 font-semibold italic">
+                {game.released}
+            </p>
+            <p class="text-xl mb-2 font-light">
+                <span class="font-medium">Companie:</span>
+                {game.companie}
+            </p>
+            <p class="text-xl mb-2 font-light">
+                <span class="font-medium">State:</span>
+                {game.state}
+            </p>
+            <p class="text-xl mb-2 font-light">
+                <span class="font-medium">Hours:</span>
+                {game.hours}Hrs
+            </p>
+            <p class="text-xl mb-2 font-light">
+                <span class="font-medium">Date:</span>
+                {game.dateStart} - {game.dateEnd}
+            </p>
+            <p class="text-xl mb-2 font-light">
+                <span class="font-medium">Achievements:</span>
+                {game.achievementsObtained} / {game.achievementsTotals}
+            </p>
+            <p class="text-xl mb-2 font-light">
+                <span class="font-medium">Platform:</span>
+                {game.platform}
+            </p>
+        </aside>
+    </section>
+</Layout>

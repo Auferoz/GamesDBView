@@ -1,16 +1,17 @@
 ---
 interface Props {
-	title: string,
-	poster: string,
+    id:                   number;
+    title:                string;
+    poster:               string;
 	}
 
-const { title, poster } = Astro.props;
+const { id, title, poster } = Astro.props;
 
 const imageSrc = `https://images.igdb.com/igdb/image/upload/t_cover_big/${poster}.webp`;
 
 ---
 <article>
-	<a href=`/Games/2024/${title}`>
+	<a href=`/Games/2024/game/${id}`>
 		<img 
 		transition:name={`${title}-image`}
 		src={imageSrc} 

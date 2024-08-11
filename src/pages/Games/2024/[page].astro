@@ -1,16 +1,18 @@
 ---
-import type { GetStaticPaths } from 'astro';
+import type { GetStaticPaths } from "astro";
 import type { GamesDB, GamesDBArray } from "@intefaces/burstdb";
-import CardGame from '@components/CardGame.astro';
-import Layout from '@layouts/Layout.astro';
+import CardGame from "@components/CardGame.astro";
+import Layout from "@layouts/Layout.astro";
 
 export const getStaticPaths = (async ({ paginate }) => {
+	const resp = await fetch(
+		"https://fe51f31c.gamesdbview.pages.dev/api/games",
+	);
+	const results: GamesDBArray = await resp.json();
 
-const resp = await fetch("https://fe51f31c.gamesdbview.pages.dev/api/games");
-const results: GamesDBArray = await resp.json();
-// const { GamesDB } = (await resp.json()) as GamesDBArray;
+	const sortedData = results.sort((a, b) => b.id - a.id);
 
-return paginate(results, { pageSize: 10 });
+	return paginate(sortedData, { pageSize: 10 });
 }) satisfies GetStaticPaths;
 
 const title = "List View Games | 2024";
@@ -18,18 +20,38 @@ const { page } = Astro.props;
 ---
 
 <Layout title={title}>
-	<section class="grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 2xl:h-[724px]">
+	<section
+		class="grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 2xl:h-[724px]"
+	>
 		{
-			page.data.map(({ title, poster }) => <CardGame title={title} poster={poster}/>)
+			page.data.map(
+				({
+					id,
+					title,
+					poster,
+				}) => (
+					<CardGame
+						id={id}
+						title={title}
+						poster={poster}
+					/>
+				),
+			)
 		}
 	</section>
 	<section class="flex mt-10 gap-2 items-center">
-		<a class:list={["btn", { disabled: !page.url.prev }]} href={page.url.prev}>Anterior</a>
-	
-		<a class:list={["btn", { disabled: !page.url.next }]} href={page.url.next}>Siguiente</a>
-	
+		<a
+			class:list={["btn", { disabled: !page.url.prev }]}
+			href={page.url.prev}>Anterior</a
+		>
+
+		<a
+			class:list={["btn", { disabled: !page.url.next }]}
+			href={page.url.next}>Siguiente</a
+		>
+
 		<div class="flex flex-1"></div>
-	
+
 		<span class="text-lg font-bold">Página: {page.currentPage}</span>
 	</section>
 </Layout>
