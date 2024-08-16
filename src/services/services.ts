@@ -5,7 +5,7 @@ const client_secret = 'kyqj3k797lnxelnfyn6rx2yb45fkn4';
 const grant_type = 'client_credentials';
 
 export const getGamebyId = async ({id}: { id: string}) => {
-	const res = await fetch(`https://fe51f31c.gamesdbview.pages.dev/api/games/${id}`, {
+	const res = await fetch(`https://gamesdbview.pages.dev/api/games/${id}`, {
 		method: "GET",
 	})
 	const game = (await res.json()) as GamesDBArray[]

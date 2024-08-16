@@ -6,7 +6,7 @@ import Layout from "@layouts/Layout.astro";
 
 export const getStaticPaths = (async ({ paginate }) => {
 	const resp = await fetch(
-		"https://fe51f31c.gamesdbview.pages.dev/api/games",
+		"https://gamesdbview.pages.dev/api/games",
 	);
 	const results: GamesDBArray = await resp.json();
 

@@ -6,7 +6,7 @@ import CardGame from '@components/CardGame.astro';
 
 
 export const getStaticPaths = (async () => {
-const resp = await fetch("https://fe51f31c.gamesdbview.pages.dev/api/games");
+const resp = await fetch("https://gamesdbview.pages.dev/api/games");
 const results: GamesDBArray = await resp.json();
 // const { GamesDB } = (await resp.json()) as GamesDBArray;
 
