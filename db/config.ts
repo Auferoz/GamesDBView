@@ -15,7 +15,7 @@ const GamesDB = defineTable({
     achievementsObtained: column.number(),
     achievementsTotals: column.number(),
     platform: column.text(),
-    igdbId: column.number()
+    igdbId: column.number(),
   }
 })
 

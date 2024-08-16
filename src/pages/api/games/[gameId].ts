@@ -9,7 +9,7 @@ export const GET: APIRoute = async ({ params }) => {
 
     const games = await db.select().from(GamesDB).where(eq(GamesDB.id, +gameId));
 
-    if ( games.length === 0 ) {
+    if (games.length === 0) {
 
         return new Response(JSON.stringify({ msg: 'No id found' }), {
             status: 404,
