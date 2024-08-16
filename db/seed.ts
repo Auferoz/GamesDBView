@@ -16,6 +16,7 @@ export default async function seed() {
 			achievementsObtained: 0,
 			achievementsTotals: 53,
 			platform: "Xbox Series X",
+			igdbId: 133302,
 		},
 		{
 			title: "Eiyuden Chronicle: Rising",
@@ -29,6 +30,7 @@ export default async function seed() {
 			achievementsObtained: 27,
 			achievementsTotals: 50,
 			platform: "Xbox Series X",
+			igdbId: 152245,
 		},
 		{
 			title: "League of Legends",
@@ -42,6 +44,7 @@ export default async function seed() {
 			achievementsObtained: 0,
 			achievementsTotals: 0,
 			platform: "PC Game",
+			igdbId: 115,
 		},
 		{
 			title: "Euro Truck Simulator 2",
@@ -55,6 +58,7 @@ export default async function seed() {
 			achievementsObtained: 8,
 			achievementsTotals: 87,
 			platform: "Steam",
+			igdbId: 3070,
 		},
 		{
 			title: "F1 23",
@@ -68,6 +72,7 @@ export default async function seed() {
 			achievementsObtained: 32,
 			achievementsTotals: 49,
 			platform: "EA Play",
+			igdbId: 240558,
 		},
 		{
 			title: "Lost Ark",
@@ -81,6 +86,7 @@ export default async function seed() {
 			achievementsObtained: 83,
 			achievementsTotals: 156,
 			platform: "Steam",
+			igdbId: 26128,
 		},
 		{
 			title: "Call of Duty: Warzone 2.0",
@@ -94,6 +100,7 @@ export default async function seed() {
 			achievementsObtained: 0,
 			achievementsTotals: 63,
 			platform: "Steam",
+			igdbId: 217815,
 		},
 		{
 			title: "Palworld",
@@ -107,6 +114,7 @@ export default async function seed() {
 			achievementsObtained: 12,
 			achievementsTotals: 12,
 			platform: "Steam",
+			igdbId: 151665,
 		},
 		{
 			title: "Enshrouded",
@@ -120,6 +128,7 @@ export default async function seed() {
 			achievementsObtained: 33,
 			achievementsTotals: 37,
 			platform: "Steam",
+			igdbId: 248643,
 		},
 		{
 			title: "Call of Duty® (2003)",
@@ -133,6 +142,7 @@ export default async function seed() {
 			achievementsObtained: 0,
 			achievementsTotals: 0,
 			platform: "Steam",
+			igdbId: 621,
 		},
 		{
 			title: "Call of Duty® 2",
@@ -146,6 +156,7 @@ export default async function seed() {
 			achievementsObtained: 0,
 			achievementsTotals: 0,
 			platform: "Steam",
+			igdbId: 622,
 		},
 		{
 			title: "Call of Duty® 4: Modern Warfare® (2007)",
@@ -159,6 +170,7 @@ export default async function seed() {
 			achievementsObtained: 0,
 			achievementsTotals: 0,
 			platform: "Steam",
+			igdbId: 623,
 		},
 		{
 			title: "Guitar Hero III: Legends of Rock",
@@ -172,6 +184,7 @@ export default async function seed() {
 			achievementsObtained: 0,
 			achievementsTotals: 0,
 			platform: "PC Game",
+			igdbId: 2671,
 		},
 		{
 			title: "Batman: Return to Arkham - Arkham Asylum",
@@ -185,6 +198,7 @@ export default async function seed() {
 			achievementsObtained: 28,
 			achievementsTotals: 47,
 			platform: "Xbox Series X",
+			igdbId: 203433,
 		},
 		{
 			title: "Final Fantasy VIII",
@@ -198,6 +212,7 @@ export default async function seed() {
 			achievementsObtained: 42,
 			achievementsTotals: 45,
 			platform: "Steam",
+			igdbId: 203538,
 		},
 		{
 			title: "Final Fantasy XIII",
@@ -211,6 +226,7 @@ export default async function seed() {
 			achievementsObtained: 10,
 			achievementsTotals: 35,
 			platform: "Xbox Series X",
+			igdbId: 389,
 		},
 		{
 			title: "Portal",
@@ -224,6 +240,7 @@ export default async function seed() {
 			achievementsObtained: 4,
 			achievementsTotals: 12,
 			platform: "Xbox Series X",
+			igdbId: 71,
 		},
 		{
 			title: "AO Tennis 2",
@@ -237,6 +254,7 @@ export default async function seed() {
 			achievementsObtained: 5,
 			achievementsTotals: 32,
 			platform: "Steam",
+			igdbId: 125479,
 		},
 		{
 			title: "Call of Duty: World at War",
@@ -250,9 +268,10 @@ export default async function seed() {
 			achievementsObtained: 0,
 			achievementsTotals: 0,
 			platform: "Steam",
+			igdbId: 625,
 		},
 		{
-			title: "Crash Bandicoot N. Sane Trilogy | C1",
+			title: "Crash Bandicoot N. Sane Trilogy",
 			released: "29/06/2017",
 			companie: "Vicarious Visions",
 			poster: "co1v62",
@@ -263,6 +282,7 @@ export default async function seed() {
 			achievementsObtained: 14,
 			achievementsTotals: 74,
 			platform: "Steam",
+			igdbId: 26196,
 		},
 		{
 			title: "Granblue Fantasy: Relink",
@@ -276,6 +296,7 @@ export default async function seed() {
 			achievementsObtained: 12,
 			achievementsTotals: 54,
 			platform: "Steam",
+			igdbId: 22788,
 		},
 		{
 			title: "Senua's Saga: Hellblade II",
@@ -289,6 +310,7 @@ export default async function seed() {
 			achievementsObtained: 11,
 			achievementsTotals: 11,
 			platform: "Xbox Series X",
+			igdbId: 127342,
 		},
 	]);
 

@@ -1,21 +1,40 @@
 ---
+import { postGameIGDB } from '../services/services'
 
-const { title } = Astro.props
-
-const respRawg = await fetch(`https://api.rawg.io/api/games?key=3dc1bd459a81415caebcb7eae0411687&search=${title}`);
-const dataRawg = await respRawg.json();
-const dataZero = dataRawg.results[0];
+const { title, igdbId } = Astro.props
+const arrayRes = await postGameIGDB({ igdbId })
+const game = arrayRes[0]
 
 ---
+
 <section class="flex flex-col gap-4 mt-4">
-    <p class="text-xl font-semibold">
-        Rating: <span class="text-lg font-light">{dataZero.rating} / 5</span>
-    </p>
-    
-    <p class="text-xl font-semibold">
-        Genres:
-        {dataZero.genres.map((genres: { name: string; }) => (
-            <span class="text-lg pl-2 font-light">{genres.name},</span>
-        ))}
-    </p>
+    {game.summary && (
+        <p class="text-xl font-semibold">
+            Summary: <span class="text-lg font-light">{game.summary}</span>
+        </p>
+    )}
+
+    {game.aggregated_rating && (
+        <p class="text-xl font-semibold">
+            Rating: <span class="text-lg font-light">{game.aggregated_rating} / 100</span>
+        </p>
+    )}
+
+    {game.genres && game.genres.length > 0 && (
+        <p class="text-xl font-semibold">
+            Genres:
+            {game.genres.map((genre: { name: string; }) => (
+                <span class="font-light">{genre.name}, </span>
+            ))}
+        </p>
+    )}
+
+    {game.themes && game.themes.length > 0 && (
+        <p class="text-xl font-semibold">
+            Themes:
+            {game.themes.map((theme: { name: string; }) => (
+                <span class="font-light">{theme.name}, </span>
+            ))}
+        </p>
+    )}
 </section>

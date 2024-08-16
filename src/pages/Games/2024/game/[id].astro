@@ -67,14 +67,14 @@ const imageSrc = `https://images.igdb.com/igdb/image/upload/t_cover_big/${game.p
         </aside>
 
     </section>
+    
+    <hr class="my-6">
+
+    <RatingList title={game.title} igdbId={game.igdbId}></RatingList>
+
 
     <hr class="my-6">
 
-    <!-- <RatingList title={game.title}></RatingList> -->
-
-
-    <hr class="my-6">
-
-    <!-- <ScreenshotsList title={game.title}></ScreenshotsList> -->
+    <ScreenshotsList title={game.title} igdbId={game.igdbId}></ScreenshotsList>
 
 </Layout>

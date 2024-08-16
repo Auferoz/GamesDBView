@@ -11,6 +11,7 @@ export interface GamesDB {
     achievementsObtained: number;
     achievementsTotals:   number;
     platform:             Platform;
+    igdbId:               number;
 }
 
 export enum Platform {

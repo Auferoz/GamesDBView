@@ -1,20 +1,42 @@
 ---
+import { postGameIGDB } from "../services/services";
 
-const { title } = Astro.props
-
-
-const respRawg = await fetch(`https://api.rawg.io/api/games?key=3dc1bd459a81415caebcb7eae0411687&search=${title}`);
-const dataRawg = await respRawg.json();
-const dataZero = dataRawg.results[0];
+const { title, igdbId } = Astro.props;
+const arrayRes = await postGameIGDB({ igdbId });
+const game = arrayRes[0];
 
 ---
-<section class="flex flex-col gap-4 mt-4">
-    <h3 class="text-2xl xl:text-4xl font-normal">
-        Screenshot
-    </h3>
-    <div class="flex flex-col gap-4">
-        {dataZero.short_screenshots.map((screenshot: { image: string | null | undefined; id: any; }) => (
-            <img class="border rounded-lg" src={screenshot.image} alt={`Screenshot ${screenshot.id}`} />
-        ))}
-    </div>
-</section>
+
+{
+    game.artworks && game.artworks.length > 0 && (
+        <section class="flex flex-col gap-4 mt-4">
+            <h3 class="text-2xl xl:text-4xl font-normal">Artworks</h3>
+            <div class="grid grid-cols-1 xl:grid-cols-5 gap-4">
+                {game.artworks.map((artworks: { image_id: string }) => (
+                    <img
+                        src={`https://images.igdb.com/igdb/image/upload/t_1080p/${artworks.image_id}.jpg`}
+                        alt={artworks.image_id}
+                        class="w-full h-full object-cover rounded-lg"
+                    />
+                ))}
+            </div>
+        </section>
+    )
+}
+
+{
+    game.screenshots && game.screenshots.length > 0 && (
+        <section class="flex flex-col gap-4 mt-4">
+            <h3 class="text-2xl xl:text-4xl font-normal">Screenshots</h3>
+            <div class="grid grid-cols-1 xl:grid-cols-5 gap-4">
+                {game.screenshots.map((screenshots: { image_id: string }) => (
+                    <img
+                        src={`https://images.igdb.com/igdb/image/upload/t_1080p/${screenshots.image_id}.jpg`}
+                        alt={screenshots.image_id}
+                        class="w-full h-full object-cover rounded-lg"
+                    />
+                ))}
+            </div>
+        </section>
+    )
+}
