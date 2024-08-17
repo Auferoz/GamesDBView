@@ -15,13 +15,16 @@ if (id) {
     game = await getGamebyId({ id })
 }
 
-const imageSrc = `https://images.igdb.com/igdb/image/upload/t_cover_big/${game.poster}.webp`;
+
+
+
+const imageSrc = `https://images.igdb.com/igdb/image/upload/t_1080p/${game.poster}.webp`;
 
 
 ---
 
 <Layout title=`${game.title} | Game`>
-    <section class="flex flex-row gap-4">
+    <section class="flex flex-row xl:flex-row gap-4">
         
         <article class="w-6/12 xl:w-4/12">
             <a onclick="history.back()">
@@ -29,7 +32,7 @@ const imageSrc = `https://images.igdb.com/igdb/image/upload/t_cover_big/${game.p
                 transition:name={`${game.title}-image`}
                 src={imageSrc} 
                 alt={game.title}
-                class="w-full rounded-lg border">
+                class="w-full h-full object-cover rounded-lg border">
             </a>
         </article>
 
@@ -40,32 +43,32 @@ const imageSrc = `https://images.igdb.com/igdb/image/upload/t_cover_big/${game.p
             <p class="text-md xl:text-xl mb-2 font-semibold italic">
                 {game.released}
             </p>
-            <p class="text-md xl:text-2xl mb-0 font-light">
+            <p class="text-md xl:text-2xl mb-0 capitalize font-light truncate">
                 <span class="font-medium">Companie:</span>
                 {game.companie}
             </p>
-            <p class="text-md xl:text-2xl mb-0 font-light">
+            <p class="text-md xl:text-2xl mb-0 capitalize font-light truncate">
                 <span class="font-medium">State:</span>
                 {game.state}
             </p>
-            <p class="text-md xl:text-2xl mb-0 font-light">
+            <p class="text-md xl:text-2xl mb-0 capitalize font-light truncate">
                 <span class="font-medium">Hours:</span>
-                {game.hours}Hrs
+                {game.hours} Hrs
             </p>
-            <p class="text-md xl:text-2xl mb-0 font-light">
+            <p class="text-md xl:text-2xl mb-0 capitalize font-light truncate">
                 <span class="font-medium">Date:</span>
-                {game.dateStart} - {game.dateEnd}
+                {game.dateStart} - {game.dateEnd != '' ? game.dateEnd : 'no date yet'}
             </p>
-            <p class="text-md xl:text-2xl mb-0 font-light">
+            <p class="text-md xl:text-2xl mb-0 capitalize font-light truncate">
                 <span class="font-medium">Achievements:</span>
                 {game.achievementsObtained} / {game.achievementsTotals}
             </p>
-            <p class="text-md xl:text-2xl mb-0 font-light">
+            <p class="text-md xl:text-2xl mb-0 capitalize font-light truncate">
                 <span class="font-medium">Platform:</span>
                 {game.platform}
             </p>
-            <p class="text-md xl:text-2xl mb-0 font-light">
-                <span class="font-medium">igdbId:</span>{game.igdbId}
+            <p class="text-md xl:text-2xl mb-0 capitalize font-light truncate">
+                <span class="font-medium">igdbId: </span> {game.igdbId}
             </p>
         </aside>
 
