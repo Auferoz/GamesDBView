@@ -76,11 +76,11 @@ const imageSrc = `https://images.igdb.com/igdb/image/upload/t_1080p/${game.poste
     
     <hr class="my-6">
 
-    <RatingList title={game.title} igdbId={game.igdbId}></RatingList>
+    <RatingList title={game.title} igdbId={game.igdbId} client:defer ></RatingList>
 
 
     <hr class="my-6">
 
-    <ScreenshotsList title={game.title} igdbId={game.igdbId}></ScreenshotsList>
+    <ScreenshotsList title={game.title} igdbId={game.igdbId} client:defer></ScreenshotsList>
 
 </Layout>
